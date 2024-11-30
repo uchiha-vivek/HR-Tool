@@ -13,14 +13,21 @@ from dotenv import load_dotenv
 import time
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+if "GROQ_API_KEY" in st.secrets:
+    # Use Streamlit secrets for deployment
+    groq_api_key = st.secrets["GROQ_API_KEY"]
+    google_api_key = st.secrets["GOOGLE_API_KEY"]
+else:
+    # Use local .env file for local development
+    from dotenv import load_dotenv
+    load_dotenv()
+    groq_api_key = os.getenv("GROQ_API_KEY")
+    google_api_key = os.getenv("GOOGLE_API_KEY")
 
-groq_api_key = st.secrets["GROQ_API_KEY"]
-google_api_key = st.secrets["GOOGLE_API_KEY"]
-
-# Set environment variables
+# Set environment variables if needed
 os.environ["GROQ_API_KEY"] = groq_api_key
 os.environ["GOOGLE_API_KEY"] = google_api_key
- 
+
 st.title("Gemma Model Document Q&A with Resume Upload and ATS Scoring")
 
 
