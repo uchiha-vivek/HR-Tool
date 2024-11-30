@@ -13,20 +13,37 @@ from dotenv import load_dotenv
 import time
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-if "GROQ_API_KEY" in st.secrets:
-    # Use Streamlit secrets for deployment
-    groq_api_key = st.secrets["GROQ_API_KEY"]
-    google_api_key = st.secrets["GOOGLE_API_KEY"]
-else:
-    # Use local .env file for local development
-    from dotenv import load_dotenv
-    load_dotenv()
-    groq_api_key = os.getenv("GROQ_API_KEY")
-    google_api_key = os.getenv("GOOGLE_API_KEY")
+groq_api_key = None
+google_api_key = None
 
-# Set environment variables if needed
-os.environ["GROQ_API_KEY"] = groq_api_key
-os.environ["GOOGLE_API_KEY"] = google_api_key
+try:
+    # Check if running on Streamlit Cloud
+    if "GROQ_API_KEY" in st.secrets:
+        groq_api_key = st.secrets["GROQ_API_KEY"]
+        google_api_key = st.secrets["GOOGLE_API_KEY"]
+    else:
+        # Load .env file for local development
+        from dotenv import load_dotenv
+        load_dotenv()
+
+        groq_api_key = os.getenv("GROQ_API_KEY")
+        google_api_key = os.getenv("GOOGLE_API_KEY")
+
+    # Check if keys are still None
+    if not groq_api_key or not google_api_key:
+        raise ValueError("API keys are missing. Check your .env file or Streamlit secrets.")
+    
+    # Set environment variables
+    os.environ["GROQ_API_KEY"] = groq_api_key
+    os.environ["GOOGLE_API_KEY"] = google_api_key
+
+    # Print for debugging (Remove this in production)
+    print("GROQ API Key:", groq_api_key)
+    print("Google API Key:", google_api_key)
+
+except Exception as e:
+    st.error(f"Error loading API keys: {e}")
+    st.stop()
 
 st.title("Gemma Model Document Q&A with Resume Upload and ATS Scoring")
 
