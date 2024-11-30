@@ -1,0 +1,26 @@
+We are looking for a passionate and skilled Software Developer to join our dynamic team. The ideal candidate will have a strong understanding of programming, problem-solving, and the ability to write clean, scalable, and efficient code.
+
+Responsibilities:
+- Write well-designed, efficient, and testable code.
+- Collaborate with cross-functional teams to define and design new features.
+- Participate in code reviews, providing constructive feedback.
+- Troubleshoot, debug, and upgrade existing systems.
+- Write unit and integration tests to ensure the software meets the highest standards.
+- Maintain code quality, organization, and automation.
+- Continuously discover, evaluate, and implement new technologies to maximize development efficiency.
+
+Requirements:
+- Bachelor’s degree in Computer Science, Engineering, or a related field.
+- Strong experience with Java, C#, Python, or similar programming languages.
+- Proficiency with front-end technologies (e.g., React, Angular, HTML, CSS).
+- Knowledge of database management systems (SQL, NoSQL).
+- Experience with version control tools (e.g., Git).
+- Familiarity with agile development methodologies.
+- Strong problem-solving skills and attention to detail.
+- Excellent communication and teamwork abilities.
+
+Preferred:
+- Experience with cloud platforms (AWS, Azure, Google Cloud).
+- Knowledge of containerization tools like Docker.
+- Familiarity with CI/CD pipelines.
+- Exposure to machine learning or artificial intelligence technologies is a p
