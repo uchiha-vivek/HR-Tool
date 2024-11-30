@@ -20,7 +20,7 @@ google_api_key = st.secrets["GOOGLE_API_KEY"]
 # Set environment variables
 os.environ["GROQ_API_KEY"] = groq_api_key
 os.environ["GOOGLE_API_KEY"] = google_api_key
-
+ 
 st.title("Gemma Model Document Q&A with Resume Upload and ATS Scoring")
 
 
