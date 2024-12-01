@@ -23,4 +23,4 @@ Preferred:
 - Experience with cloud platforms (AWS, Azure, Google Cloud).
 - Knowledge of containerization tools like Docker.
 - Familiarity with CI/CD pipelines.
-- Exposure to machine learning or artificial intelligence technologies is a p
+- Exposure to machine learning or artificial intelligence technologies is a plus
